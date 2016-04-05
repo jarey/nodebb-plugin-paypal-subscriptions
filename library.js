@@ -125,6 +125,43 @@ var async = module.parent.require('async'),
 	function pullGroups(group, callback) {
 		/*Do what on each subscription?*/
 	}
+	
+	function giveUserTrialMembership(user,group,trialinterval,triallength){
+		/*add user to group*/ 
+		/*queue up job to remove the user from that group trialinterval x triallength from now*/
+		/*...there's a few cron jobs which should ping at every interval...*/
+		/*...add job revokeUserSubscription(user,group);*/
+	}
+	
+	function extendTrialPeriod(user,group,trialinterval,triallength){
+		/*double check the user's trial period in the subscription is less than the one the admin will give*/
+		
+		/*remove the user's previous trial period*/
+		
+		/*replace the grace trial with the new one*/
+	}
+	
+	function giveUserGracePeriod(user,group,graceinterval,gracelength){
+		/*at the end of a subscription, this function will be called, if there is no grace period to give the user will be removed instantly*/
+	}
+	
+	/*For admins who'd like to be nice I'd imagine there'd be a button to do this*/
+	function extendGracePeriod(user,group,graceinterval,gracelength){
+		/*double check the user's grace period in the subscription is less than the one the admin will give*/
+		
+		/*remove the user's previous grace period*/
+		
+		/*replace the grace period with the new one*/
+	
+	}
+	
+	function addUserSubscription(user,group){
+		/*add user to group*/
+		/*remove all trial and grace periods*/
+	}
+	function revokeUserSubscription(user,group){
+		/*remove user from group*/
+	}
 
 	var admin = {};
 

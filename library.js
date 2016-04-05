@@ -22,11 +22,17 @@ var async = module.parent.require('async'),
 	var settings = {};
 	
 	/*Make sensible cron jobs*/
-	cronJobs.push(new cron('* * * * * *', function() { pullGroupsInterval('seconds'); }, null, false));
+	cronJobs.push(new cron('* * * * * *', function() { pullGroupsInterval('second'); }, null, false));
+	cronJobs.push(new cron('00 * * * * *', function() { pullGroupsInterval('minute'); }, null, false));
 	cronJobs.push(new cron('00 00 0-23 * * *', function() { pullGroupsInterval('hour'); }, null, false));
+	/*cronJobs.push(new cron('00 00 * * * *', function() { pullGroupsInterval('hour'); }, null, false));*/
 	cronJobs.push(new cron('00 00 00 * * 0-6', function() { pullGroupsInterval('day'); }, null, false));
+	/*cronJobs.push(new cron('00 00 00 * * *', function() { pullGroupsInterval('day'); }, null, false));*/
 	cronJobs.push(new cron('00 00 00 * * 0', function() { pullGroupsInterval('week'); }, null, false));
 	cronJobs.push(new cron('00 00 00 1 0-11 *', function() { pullGroupsInterval('month'); }, null, false));
+	/*cronJobs.push(new cron('00 00 00 1 * *', function() { pullGroupsInterval('month'); }, null, false));*/
+	cronJobs.push(new cron('00 00 00 1 0 *', function() { pullGroupsInterval('year'); }, null, false));
+	
 
 	plugins.isActive('nodebb-plugin-paypal-subscriptions', function(err, active) {
 		if (err) {
@@ -126,6 +132,7 @@ var async = module.parent.require('async'),
 		/*Do what on each subscription?*/
 	}
 	
+	/*something like this:*/
 	function giveUserTrialMembership(user,group,trialinterval,triallength){
 		/*add user to group*/ 
 		/*queue up job to remove the user from that group trialinterval x triallength from now*/
@@ -152,7 +159,6 @@ var async = module.parent.require('async'),
 		/*remove the user's previous grace period*/
 		
 		/*replace the grace period with the new one*/
-	
 	}
 	
 	function addUserSubscription(user,group){
@@ -167,12 +173,12 @@ var async = module.parent.require('async'),
 
 	admin.menu = function(custom_header, callback) {
 		custom_header.plugins.push({
-			route: '/plugins/rss',
-			icon: 'fa-rss',
-			name: 'RSS'
+			route: '/plugins/paypal-subscriptions',
+			icon: 'fa-paypal',
+			name: 'Paypal Subscriptions'
 		});
-
-		callback(null, custom_header);
+	
+		callback(null, header);
 	};
 
 	admin.getGroups = function(callback) {

@@ -1,6 +1,6 @@
 {
 	"id": "nodebb-plugin-paypal-subscriptions",
-	"url": "https://github.com/NodeBB/nodebb-plugin-paypal-subscriptions",
+	"url": "https://github.com/theunknownartisthour/nodebb-plugin-paypal-subscriptions",
 	"library": "./library.js",
 	"hooks": [
 		{
@@ -8,7 +8,19 @@
 		},
 		{
 			"hook": "filter:admin.header.build", "method": "addAdminNavigation"
-		}
+		},
+        { 
+            "hook": "filter:plugins.clearRequireCache", "method": "onClearRequireCache"
+        },
+        {
+            "hook": "action:plugin.activate", "method": "admin.activate" 
+        },
+        { 
+            "hook": "action:plugin.deactivate", "method": "admin.deactivate" 
+        },
+        { 
+            "hook": "action:plugin.uninstall", "method": "admin.uninstall"
+        }
 	],
 	"staticDirs": {
 		"static": "./static"

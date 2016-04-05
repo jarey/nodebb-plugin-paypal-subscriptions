@@ -14,7 +14,7 @@ var async = module.parent.require('async'),
 	db = module.parent.require('./database'),
 	user = module.parent.require('./user'),
 	plugins = module.parent.require('./plugins');
-
+    var Paypal = require('paypal-recurring'),
 
 (function(module) {
 

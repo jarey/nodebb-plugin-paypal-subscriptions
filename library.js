@@ -13,8 +13,10 @@ var async = module.parent.require('async'),
 	topics = module.parent.require('./topics'),
 	db = module.parent.require('./database'),
 	user = module.parent.require('./user'),
-	plugins = module.parent.require('./plugins');
-    var Paypal = require('paypal-recurring'),
+	plugins = module.parent.require('./plugins'),
+	
+	Paypal = require('paypal-recurring'),
+    	controllers = require('./lib/controllers');
 
 (function(module) {
 

@@ -7,20 +7,20 @@
 			"hook": "static:app.load", "method": "init"
 		},
 		{
-			"hook": "filter:admin.header.build", "method": "addAdminNavigation"
+			"hook": "filter:admin.header.build", "method": "admin.menu"
 		},
-        { 
-            "hook": "filter:plugins.clearRequireCache", "method": "onClearRequireCache"
-        },
-        {
-            "hook": "action:plugin.activate", "method": "admin.activate" 
-        },
-        { 
-            "hook": "action:plugin.deactivate", "method": "admin.deactivate" 
-        },
-        { 
-            "hook": "action:plugin.uninstall", "method": "admin.uninstall"
-        }
+	        { 
+	            	"hook": "filter:plugins.clearRequireCache", "method": "onClearRequireCache"
+	        },
+	        {
+	            	"hook": "action:plugin.activate", "method": "admin.activate" 
+	        },
+	        { 
+	            	"hook": "action:plugin.deactivate", "method": "admin.deactivate" 
+	        },
+	        { 
+	            	"hook": "action:plugin.uninstall", "method": "admin.uninstall"
+	        }
 	],
 	"staticDirs": {
 		"static": "./static"

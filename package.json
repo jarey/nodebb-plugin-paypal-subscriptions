@@ -5,7 +5,7 @@
   "main": "library.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/psychobunny/nodebb-plugin-paypal-subscriptions"
+    "url": "https://github.com/theunknownartisthour/nodebb-plugin-paypal-subscriptions"
   },
   "keywords": [
     "nodebb",
@@ -15,12 +15,12 @@
     "monetization"
   ],
   "author": {
-    "name": "psychobunny",
-    "email": "psycho.bunny@hotmail.com"
+    "name": "theunknownartisthour",
+    "email": "theunknownartisthour@gmail.com"
   },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/psychobunny/nodebb-plugin-paypal-subscriptions/issues"
+    "url": "https://github.com/theunknownartisthour/nodebb-plugin-paypal-subscriptions/issues"
   },
   "readmeFilename": "README.md",
   "nbbpm": {

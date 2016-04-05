@@ -293,7 +293,7 @@ var async = module.parent.require('async'),
 	});
 
 	admin.activate = function(id) {
-		if (id === 'nodebb-plugin-rss') {
+		if (id === 'nodebb-plugin-paypal-subscriptions') {
 			pubsub.publish('nodebb-plugin-paypal-subscriptions:activate');
 		}
 	};

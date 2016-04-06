@@ -54,19 +54,11 @@
 			$('.subscription-interval').each(function(index, element) {
 				$(element).val($(element).attr('data-interval'));
 			});
-			/*
-			$('.subscription-length').each(function(index,element)) {
-				$(element).val($(element).attr('data-count'));
-			});
-			*/
-			$('.subscription-grace-interval').each(function(index,element)) {
+
+			$('.subscription-grace-interval').each(function(index,element) {
 				$(element).val($(element).attr('data-interval'));
 			});
-			/*
-			$('.subscription-grace-length').each(function(index,element)) {
-				$(element).val($(element).attr('data-count'));
-			});
-			*/
+
 			$('.subscription-group').each(function(index, element) {
 				$(element).val($(element).attr('data-group'));
 			});

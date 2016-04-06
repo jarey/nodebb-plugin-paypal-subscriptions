@@ -75,7 +75,7 @@
 			ajaxify.loadTemplate('partials/groupSubscription', function(groupTemplate) {
 				var html = templates.parse(templates.getBlock(groupTemplate, 'groupTemplate'), {
 					/*filling in the defaults*/
-					subscription: [{
+					groupTemplate: [{
 						name: '',
 						group: '',
 						username: '',

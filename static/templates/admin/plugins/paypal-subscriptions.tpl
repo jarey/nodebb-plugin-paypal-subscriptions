@@ -35,7 +35,7 @@
 <script src="{config.relative_path}/vendor/jquery/bootstrap-tagsinput/bootstrap-tagsinput.min.js"></script>
 <script type="text/javascript">
 	$(document).ready(function() {
-		var categories = null;
+		var groups = null;
 		function addOptionsToAllSelects() {
 			$('.form-control.subscription-group').each(function(index, element) {
 				addOptionsToSelect($(element));

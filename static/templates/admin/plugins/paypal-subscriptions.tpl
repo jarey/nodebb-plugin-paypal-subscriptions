@@ -72,8 +72,8 @@
 			});
 		});
 		$('#addSubscription').on('click', function() {
-			ajaxify.loadTemplate('partials/group', function(feedTemplate) {
-				var html = templates.parse(templates.getBlock(feedTemplate, 'groups'), {
+			ajaxify.loadTemplate('partials/groupSubscription', function(groupTemplate) {
+				var html = templates.parse(templates.getBlock(groupTemplate, 'groups'), {
 					/*filling in the defaults*/
 					groups: [{
 						name: '',
@@ -89,6 +89,7 @@
 						endbehavior: 'blocked'
 					}]
 				});
+				console.log(html);
 				var newGroup = $(html).appendTo('.groups');
 				enableAutoComplete(newGroup.find('.subscription-admin'));
 				/*enableTagsInput(newFeed.find('.feed-tags'));*/

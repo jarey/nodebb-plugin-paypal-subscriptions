@@ -54,6 +54,9 @@
 		socket.emit('groups.get', function(err, data) {
 			groups = data;
 			console.log(groups);
+			if(err){
+				console.log(err);
+			}
 			addOptionsToAllSelects();
 			/*Filling the options back in?*/
 			$('.subscription-interval').each(function(index, element) {

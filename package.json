@@ -27,6 +27,9 @@
     "compatibility": "^1.0.0"
   },
   "dependencies": {
-    "paypal-recurring": "^1.1.0"
+    "cron": "~1.0.1",
+    "to-markdown": "^1.2.1",
+    "paypal-recurring": "^1.1.0",
+    "string": "~1.7.0"
   }
 }

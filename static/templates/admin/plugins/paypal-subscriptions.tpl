@@ -42,13 +42,18 @@
 			});
 		}
 		function addOptionsToSelect(select) {
-			for(var i=0; i<groups.length; ++i) {
-				/*Probably the structure of the groups object...apologies...wild guess these are the accessors needed*/
-				select.append('<option value=' + groups[i].cid + '>' + groups[i].name + '</option>');
+			if(groups == null){
+				console.log("groups is null?");
+			} else {
+				for(var i=0; i<groups.length; ++i) {
+					/*Probably the structure of the groups object...apologies...wild guess these are the accessors needed*/
+					select.append('<option value=' + groups[i].cid + '>' + groups[i].name + '</option>');
+				}
 			}
 		}
 		socket.emit('groups.get', function(err, data) {
 			groups = data;
+			console.log(groups);
 			addOptionsToAllSelects();
 			/*Filling the options back in?*/
 			$('.subscription-interval').each(function(index, element) {
@@ -81,10 +86,10 @@
 						endbehavior: 'blocked'
 					}]
 				});
-				var newFeed = $(html).appendTo('.groups');
-				enableAutoComplete(newFeed.find('.subscription-admin'));
+				var newGroup = $(html).appendTo('.groups');
+				enableAutoComplete(newGroup.find('.subscription-admin'));
 				/*enableTagsInput(newFeed.find('.feed-tags'));*/
-				addOptionsToSelect(newFeed.find('.subscription-group'));
+				addOptionsToSelect(newGroup.find('.subscription-group'));
 			});
 			return false;
 		});
@@ -114,7 +119,7 @@
 					groupsToSave.push(group);
 				}
 			});
-			$.post('{config.relative_path}/api/admin/plugins/rss/save', {
+			$.post('{config.relative_path}/api/admin/plugins/paypal-subscriptions/save', {
 				_csrf: $('#csrf_token').val(),
 				groups: groupsToSave,
 				settings: {

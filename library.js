@@ -140,14 +140,14 @@ var async = module.parent.require('async'),
 	}
 
 	function pullGroups(groups) {
-		async.eachSeries(groups, pullGroups, function(err) {
+		async.eachSeries(groups, pullGroup, function(err) {
 			if (err) {
 				winston.error(err.message);
 			}
 		});
 	}
 
-	function pullGroups(group, callback) {
+	function pullGroup(group, callback) {
 		if(!group) {
 			return callback();
 		}

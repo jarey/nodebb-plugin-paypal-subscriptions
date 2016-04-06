@@ -56,7 +56,7 @@
 			});
 			/*
 			$('.subscription-length').each(function(index,element)) {
-				$(element).val($(element).attr('data-length'));
+				$(element).val($(element).attr('data-count'));
 			});
 			*/
 			$('.subscription-grace-interval').each(function(index,element)) {
@@ -64,7 +64,7 @@
 			});
 			/*
 			$('.subscription-grace-length').each(function(index,element)) {
-				$(element).val($(element).attr('data-length'));
+				$(element).val($(element).attr('data-count'));
 			});
 			*/
 			$('.subscription-group').each(function(index, element) {
@@ -81,11 +81,11 @@
 						username: '',
 						cost: 5,
 						graceinterval: 'weeks',
-						gracelength: 0,
+						gracecount: 0,
 						trialinterval: 'weeks',
-						triallength: 0,
+						trialcount: 0,
 						interval: 'months',
-						length: 1,
+						count: 1,
 						endbehavior: 'blocked'
 					}]
 				});
@@ -110,11 +110,11 @@
 					username: child.find('subscription-username').val(),
 					cost: child.find('subscription-cost').val(),
 					graceinterval: child.find('subscription-grace-interval').val(),
-					gracelength: child.find('subscription-grace-length').val(),
+					gracecount: child.find('subscription-grace-count').val(),
 					trialinterval: child.find('subscription-trial-interval').val(),
-					triallength: child.find('subscription-trial-length').val(),
+					trialcount: child.find('subscription-trial-count').val(),
 					interval: child.find('subscription-interval').val(),
-					length: child.find('subscription-length').val(),
+					count: child.find('subscription-count').val(),
 					endBehavior: child.find('subscription-end-behavior').val()
 				};
 				/*Must haves~before we save anything...*/

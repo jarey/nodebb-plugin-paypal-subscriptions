@@ -70,13 +70,13 @@ var async = module.parent.require('async'),
 				return next(err);
 			}
 
-			if (!req.body.feeds) {
+			if (!req.body.groups) {
 				return res.json({message:'Groups saved!'});
 			}
 
 			async.parallel([
 				function(next) {
-					saveGroups(req.body.feeds, next);
+					saveGroups(req.body.groups, next);
 				},
 				function(next) {
 					admin.saveSettings(req.body.settings, next);
@@ -240,7 +240,7 @@ var async = module.parent.require('async'),
 	};
 
 	function saveGroups(groups, callback) {
-		async.each(groups, function saveFeed(group, next) {
+		async.each(groups, function saveGroup(group, next) {
 			if(!group.name && group.group) {
 				return next();
 			}

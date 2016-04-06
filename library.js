@@ -58,10 +58,27 @@ var async = module.parent.require('async'),
 	  		hostControllers = params.controllers;
 	  
 	    	router.post('/api/admin/plugins/paypal-subscriptions/ipn/:sandbox', controllers.instantPaypalNotification);
-	  	router.get('/admin/plugins/paypal-subscriptions', params.middleware.applyCSRF, hostMiddleware.admin.buildHeader, controllers.renderAdminPage);
-	  	router.get('/api/admin/plugins/paypal-subscriptions', params.middleware.applyCSRF, controllers.renderAdminPage);
+	  	router.get('/admin/plugins/paypal-subscriptions', params.middleware.applyCSRF, hostMiddleware.admin.buildHeader, renderAdminPage);
+	  	router.get('/api/admin/plugins/paypal-subscriptions', params.middleware.applyCSRF, renderAdminPage);
 	  
 	  	callback();
+	};
+	
+	function renderAdminPage(req, res, next) {
+		async.parallel({
+			groups: function(next) {
+				admin.getGroups(next);
+			},
+			settings: function(next) {
+				admin.getSettings(next);
+			}
+		}, function(err, results) {
+			if(err) {
+				return next(err);
+			}
+			results.csrf = req.csrfToken();
+			res.render('admin/plugins/paypal-subscriptions', results);
+		});
 	};
 
 	function save(req, res, next) {

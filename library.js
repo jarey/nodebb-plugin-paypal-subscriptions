@@ -182,8 +182,8 @@ var async = module.parent.require('async'),
 
 	var admin = {};
 
-	admin.menu = function(custom_header, callback) {
-		custom_header.plugins.push({
+	admin.menu = function(header, callback) {
+		header.plugins.push({
 			route: '/plugins/paypal-subscriptions',
 			icon: 'fa-paypal',
 			name: 'Paypal Subscriptions'

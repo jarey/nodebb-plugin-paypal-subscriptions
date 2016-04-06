@@ -15,8 +15,8 @@ var async = module.parent.require('async'),
 	user = module.parent.require('./user'),
 	plugins = module.parent.require('./plugins'),
 	
-	Paypal = require('paypal-recurring'),
     	controllers = require('./lib/controllers');
+    	/*Paypal = require('paypal-recurring'),*/
 
 (function(module) {
 
@@ -115,7 +115,7 @@ var async = module.parent.require('async'),
 			}
 			groups = groups.filter(function(item) {
 				/*No idea how to use this yet...*/
-				return item && parseInt(item.interval, 10) === interval;
+				return item && item.interval == interval;
 			});
 
 			pullGroups(groups);
@@ -131,7 +131,16 @@ var async = module.parent.require('async'),
 	}
 
 	function pullGroups(group, callback) {
-		/*Do what on each subscription?*/
+		if(!group) {
+			return callback();
+		}
+		if(!group.intervalCount){
+			group.intervalCount = 0;
+		}
+		/*do stuffs*/
+		
+		/*exit*/
+		return callback();
 	}
 	
 	/*something like this:*/

@@ -31,8 +31,8 @@
 		  </div>
   		<div class="col-sm-2 col-xs-12">
   			<div class="form-group">
-  				<label>Length</label>
-  				<input type="text" class="form-control subscription-grace-length" placeholder="How long does the grace period last?" value="{subscription.gracelength}">
+  				<label>Count</label>
+  				<input type="text" class="form-control subscription-grace-count" placeholder="How long does the grace period last?" value="{subscription.gracecount}">
   			</div>
   		</div>
 			<div class="col-sm-2 col-xs-12">
@@ -50,8 +50,8 @@
 		  </div>
   		<div class="col-sm-2 col-xs-12">
   			<div class="form-group">
-  				<label>Length</label>
-  				<input type="text" class="form-control subscription-trial-length" placeholder="How long does the trial period last?" value="{subscription.triallength}">
+  				<label>count</label>
+  				<input type="text" class="form-control subscription-trial-count" placeholder="How long does the trial period last?" value="{subscription.trialcount}">
   			</div>
   		</div>
 		</div>
@@ -89,7 +89,7 @@
 		<div class="col-sm-2 col-xs-12">
 			<div class="form-group">
 				<label># Intervals / Default Subscription</label>
-				<input type="text" class="form-control subscription-length" placeholder="How many payment intervals does a subscription last?" value="{subscription.length}">
+				<input type="text" class="form-control subscription-count" placeholder="How many payment intervals does a subscription last?" value="{subscription.count}">
 			</div>
 		</div>
 

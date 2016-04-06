@@ -22,7 +22,7 @@
 <!-- IMPORT partials/feed.tpl -->
 </div>
 
-<button id="addSubscription" class="floating-button mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
+<button id="addSubscription" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
 	<i class="material-icons">add box</i>
 </button>
 

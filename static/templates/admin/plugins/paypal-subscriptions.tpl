@@ -73,7 +73,7 @@
 		});
 		$('#addSubscription').on('click', function() {
 			ajaxify.loadTemplate('partials/groupSubscription', function(groupTemplate) {
-				var html = templates.parse(templates.getBlock(groupTemplate, 'groups'), {
+				var html = templates.parse(templates.getBlock(groupTemplate, 'groupTemplate'), {
 					/*filling in the defaults*/
 					groups: [{
 						name: '',

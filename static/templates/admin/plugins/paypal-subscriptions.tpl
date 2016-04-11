@@ -51,7 +51,7 @@
 				}
 			}
 		}
-		socket.emit('groups.get', function(err, data) {
+		socket.emit('groups.search', function(err, data) {
 			groups = data;
 			console.log(groups);
 			if(err){

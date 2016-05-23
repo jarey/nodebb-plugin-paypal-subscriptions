@@ -1,4 +1,4 @@
-<!-- BEGIN subscription -->
+<!-- BEGIN groups -->
 <div class="row group well">
 		<div class="col-sm-12 col-xs-12">
 			<div class="form-group">
@@ -110,4 +110,4 @@
 			</div>
 		</div>
 </div>
-<!-- END subscription -->
+<!-- END groups -->

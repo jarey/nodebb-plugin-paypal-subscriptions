@@ -1,5 +1,5 @@
 <!-- BEGIN subscription -->
-<div class="row feed well">
+<div class="row group well">
 		<div class="col-sm-12 col-xs-12">
 			<div class="form-group">
 				<label>Subscription</label>

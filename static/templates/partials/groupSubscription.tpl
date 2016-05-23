@@ -18,42 +18,42 @@
 			</div>
 			<div class="col-sm-2 col-xs-12">
 				<div class="form-group">
-  				<label>Grace Interval</label>
-  				<select class="form-control subscription-grace-interval" data-interval="{groupTemplate.graceinterval}">
-  				  <option value="minute">Minutes</option>
-  					<option value="hour">Hours</option>
-  					<option value="day">Days</option>
-  					<option value="week">Weeks</option>
-  					<option value="month">Months</option>
-  					<option value="year">Years</option>
-  				</select>
-  			</div>
-		  </div>
-  		<div class="col-sm-2 col-xs-12">
-  			<div class="form-group">
-  				<label>Count</label>
-  				<input type="text" class="form-control subscription-grace-count" placeholder="How long does the grace period last?" value="{groupTemplate.gracecount}">
-  			</div>
-  		</div>
+	  				<label>Grace Interval</label>
+	  				<select class="form-control subscription-grace-interval" data-interval="{groupTemplate.graceinterval}">
+						<option value="minute">Minutes</option>
+						<option value="hour">Hours</option>
+						<option value="day">Days</option>
+						<option value="week">Weeks</option>
+						<option value="month">Months</option>
+						<option value="year">Years</option>
+	  				</select>
+				</div>
+			</div>
+	  		<div class="col-sm-2 col-xs-12">
+	  			<div class="form-group">
+	  				<label>Count</label>
+	  				<input type="text" class="form-control subscription-grace-count" placeholder="How long does the grace period last?" value="{groupTemplate.gracecount}">
+	  			</div>
+	  		</div>
 			<div class="col-sm-2 col-xs-12">
 				<div class="form-group">
-  				<label>Trial Interval</label>
-  				<select class="form-control subscription-interval" data-interval="{groupTemplate.trialinterval}">
-  				  <option value="minute">Minutes</option>
-  					<option value="hour">Hours</option>
-  					<option value="day">Days</option>
-  					<option value="week">Weeks</option>
-  					<option value="month">Months</option>
-  					<option value="year">Years</option>
-  				</select>
-  			</div>
-		  </div>
-  		<div class="col-sm-2 col-xs-12">
-  			<div class="form-group">
-  				<label>count</label>
-  				<input type="text" class="form-control subscription-trial-count" placeholder="How long does the trial period last?" value="{groupTemplate.trialcount}">
-  			</div>
-  		</div>
+					<label>Trial Interval</label>
+					<select class="form-control subscription-interval" data-interval="{groupTemplate.trialinterval}">
+						<option value="minute">Minutes</option>
+						<option value="hour">Hours</option>
+						<option value="day">Days</option>
+						<option value="week">Weeks</option>
+						<option value="month">Months</option>
+						<option value="year">Years</option>
+					</select>
+				</div>
+			</div>
+			<div class="col-sm-2 col-xs-12">
+				<div class="form-group">
+					<label>count</label>
+					<input type="text" class="form-control subscription-trial-count" placeholder="How long does the trial period last?" value="{groupTemplate.trialcount}">
+				</div>
+			</div>
 		</div>
 
 		
@@ -109,5 +109,5 @@
 				<button class="form-control remove btn-warning">Remove</button>
 			</div>
 		</div>
-	</div>
-	<!-- END subscription -->
+</div>
+<!-- END subscription -->

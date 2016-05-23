@@ -35,24 +35,24 @@
 <script src="{config.relative_path}/vendor/jquery/bootstrap-tagsinput/bootstrap-tagsinput.min.js"></script>
 <script type="text/javascript">
 	$(document).ready(function() {
-		var groups = null;
+		var groupList = null;
 		function addOptionsToAllSelects() {
 			$('.form-control.subscription-group').each(function(index, element) {
 				addOptionsToSelect($(element));
 			});
 		}
 		function addOptionsToSelect(select) {
-			if(groups == null){
-				console.log("groups is null?");
+			if(groupList == null){
+				console.log("groupList is null?");
 			} else {
-				for(var i=0; i<groups.length; ++i) {
+				for(var i=0; i<groupList.length; ++i) {
 					/*Probably the structure of the groups object...apologies...wild guess these are the accessors needed*/
-					select.append('<option value=' + groups[i].cid + '>' + groups[i].name + '</option>');
+					select.append('<option value=' + groupList[i].name + '>' + groupList[i].name + '</option>');
 				}
 			}
 		}
 		socket.emit('groups.search', function(err, data) {
-			groups = data;
+			groupList = data;
 			console.log(groups);
 			if(err){
 				console.log(err);
@@ -73,6 +73,7 @@
 		});
 		$('#addSubscription').on('click', function() {
 			ajaxify.loadTemplate('partials/groups', function(groupTemplate) {
+				console.log(groupTemplate);
 				var html = templates.parse(templates.getBlock(groupTemplate, 'groups'), {
 					/*filling in the defaults*/
 					groups: [{
@@ -105,7 +106,7 @@
 			var groupsToSave = [];
 			$('.group').each(function(index, child) {
 				child = $(child);
-				var group = {
+				var groupItem = {
 					name: child.find('subscription-name').val(),
 					group: child.find('subscription-group').val(),
 					username: child.find('subscription-username').val(),
@@ -119,8 +120,8 @@
 					endBehavior: child.find('subscription-end-behavior').val()
 				};
 				/*Must haves~before we save anything...*/
-				if (group.name && group.group) {
-					groupsToSave.push(group);
+				if (groupItem.name && groupItem.group) {
+					groupsToSave.push(groupItem);
 				}
 			});
 			$.post('{config.relative_path}/api/admin/plugins/paypal-subscriptions/save', {

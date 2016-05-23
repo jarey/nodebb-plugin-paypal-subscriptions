@@ -36,11 +36,13 @@
 <script type="text/javascript">
 	$(document).ready(function() {
 		var groupList = null;
+		
 		function addOptionsToAllSelects() {
 			$('.form-control.subscription-group').each(function(index, element) {
 				addOptionsToSelect($(element));
 			});
 		}
+		
 		function addOptionsToSelect(select) {
 			if(groupList == null){
 				console.log("groupList is null?");
@@ -53,7 +55,7 @@
 		}
 		socket.emit('groups.search', function(err, data) {
 			groupList = data;
-			console.log(groups);
+			console.log(groupList);
 			if(err){
 				console.log(err);
 			}

@@ -92,6 +92,13 @@
 						endbehavior: 'blocked'
 					}]
 				});
+				if(html == null){
+					console.log("html is null?");
+				} else if(html == ''){
+					console.log("html is ''");
+				} else {
+					
+				}
 				console.log(html);
 				var newGroup = $(html).appendTo('.groups');
 				enableAutoComplete(newGroup.find('.subscription-admin'));

@@ -72,7 +72,7 @@
 			});
 		});
 		$('#addSubscription').on('click', function() {
-			ajaxify.loadTemplate('partials/groupSubscription', function(groupTemplate) {
+			ajaxify.loadTemplate('partials/groups', function(groupTemplate) {
 				var html = templates.parse(templates.getBlock(groupTemplate, 'groups'), {
 					/*filling in the defaults*/
 					groups: [{

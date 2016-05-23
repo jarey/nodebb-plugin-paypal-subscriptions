@@ -3,7 +3,7 @@
 		<div class="col-sm-12 col-xs-12">
 			<div class="form-group">
 				<label>Subscription</label>
-				<input type="text" class="form-control subscription-name" placeholder="Enter the subscription's name" value="{groupTemplate.name}">
+				<input type="text" class="form-control subscription-name" placeholder="Enter the subscription's name" value="{groups.name}">
 			</div>
 		</div>
 		<br/>
@@ -11,7 +11,7 @@
 			<div class="col-sm-3 col-xs-12">
 				<div class="form-group">
 					<label>Group</label>
-					<select class="form-control subscription-group" data-group="{groupTemplate.group}">
+					<select class="form-control subscription-group" data-group="{groups.group}">
 
 					</select>
 				</div>
@@ -19,7 +19,7 @@
 			<div class="col-sm-2 col-xs-12">
 				<div class="form-group">
 	  				<label>Grace Interval</label>
-	  				<select class="form-control subscription-grace-interval" data-interval="{groupTemplate.graceinterval}">
+	  				<select class="form-control subscription-grace-interval" data-interval="{groups.graceinterval}">
 						<option value="minute">Minutes</option>
 						<option value="hour">Hours</option>
 						<option value="day">Days</option>
@@ -32,13 +32,13 @@
 	  		<div class="col-sm-2 col-xs-12">
 	  			<div class="form-group">
 	  				<label>Count</label>
-	  				<input type="text" class="form-control subscription-grace-count" placeholder="How long does the grace period last?" value="{groupTemplate.gracecount}">
+	  				<input type="text" class="form-control subscription-grace-count" placeholder="How long does the grace period last?" value="{groups.gracecount}">
 	  			</div>
 	  		</div>
 			<div class="col-sm-2 col-xs-12">
 				<div class="form-group">
 					<label>Trial Interval</label>
-					<select class="form-control subscription-interval" data-interval="{groupTemplate.trialinterval}">
+					<select class="form-control subscription-interval" data-interval="{groups.trialinterval}">
 						<option value="minute">Minutes</option>
 						<option value="hour">Hours</option>
 						<option value="day">Days</option>
@@ -51,7 +51,7 @@
 			<div class="col-sm-2 col-xs-12">
 				<div class="form-group">
 					<label>count</label>
-					<input type="text" class="form-control subscription-trial-count" placeholder="How long does the trial period last?" value="{groupTemplate.trialcount}">
+					<input type="text" class="form-control subscription-trial-count" placeholder="How long does the trial period last?" value="{groups.trialcount}">
 				</div>
 			</div>
 		</div>
@@ -60,7 +60,7 @@
 		<div class="col-sm-2 col-xs-12">
 			<div class="form-group">
 				<label>User</label>
-				<input type="text" class="form-control subscription-admin" placeholder="User to control group as" value="{groupTemplate.username}">
+				<input type="text" class="form-control subscription-admin" placeholder="User to control group as" value="{groups.username}">
 			</div>
 		</div>
 		
@@ -68,14 +68,14 @@
 		<div class="col-sm-2 col-xs-12">
 			<div class="form-group">
 				<label>Pay</label>
-				<input type="text" class="form-control subscription-cost" placeholder="Renewal cost of subscription" value="{groupTemplate.cost}">
+				<input type="text" class="form-control subscription-cost" placeholder="Renewal cost of subscription" value="{groups.cost}">
 			</div>
 		</div>
 
 		<div class="col-sm-2 col-xs-12">
 			<div class="form-group">
 				<label>Per</label>
-				<select class="form-control subscription-interval" data-interval="{groupTemplate.interval}">
+				<select class="form-control subscription-interval" data-interval="{groups.interval}">
 				  <option value="minute">Minutes</option>
 					<option value="hour">Hours</option>
 					<option value="day">Days</option>
@@ -89,14 +89,14 @@
 		<div class="col-sm-2 col-xs-12">
 			<div class="form-group">
 				<label># Intervals / Default Subscription</label>
-				<input type="text" class="form-control subscription-count" placeholder="How many payment intervals does a subscription last?" value="{groupTemplate.count}">
+				<input type="text" class="form-control subscription-count" placeholder="How many payment intervals does a subscription last?" value="{groups.count}">
 			</div>
 		</div>
 
 		<div class="col-sm-3 col-xs-12">
 			<div class="form-group">
 				<label>Removal Behvaior</label>
-				<select class="form-control subscription-end-behavior" data-endbehavior="{groupTemplate.endbehavior}">
+				<select class="form-control subscription-end-behavior" data-endbehavior="{groups.endbehavior}">
 					<option value="blocked">Removed Until Paid</option>
 					<option value="grace">Grace Period</option>
 				</select>

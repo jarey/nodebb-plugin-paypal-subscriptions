@@ -1,7 +1,7 @@
 {
 	"id": "nodebb-plugin-paypal-subscriptions",
 	"name": "Paypal Subscriptions",
-    	"description": "A group / subscription manager for NodeBB",
+    	"description": "A Paypal monetization plugin for NodeBB",
 	"url": "https://github.com/theunknownartisthour/nodebb-plugin-paypal-subscriptions",
 	"library": "./library.js",
 	"hooks": [

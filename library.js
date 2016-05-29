@@ -57,7 +57,7 @@ var async = module.parent.require('async'),
 	  		hostMiddleware = params.middleware,
 	  		hostControllers = params.controllers;
 	  
-	    	router.post('/api/admin/plugins/paypal-subscriptions/ipn/:sandbox', controllers.instantPaypalNotification);
+        router.post('/api/admin/plugins/paypal-subscriptions/ipn/:sandbox', controllers.instantPaypalNotification);
 	  	router.get('/admin/plugins/paypal-subscriptions', params.middleware.applyCSRF, hostMiddleware.admin.buildHeader, renderAdminPage);
 	  	router.get('/api/admin/plugins/paypal-subscriptions', params.middleware.applyCSRF, renderAdminPage);
 	  	router.post('/api/admin/plugins/paypal-subscriptions/save', params.middleware.applyCSRF, save);
@@ -89,7 +89,7 @@ var async = module.parent.require('async'),
 			}
 
 			if (!req.body.groups) {
-				return res.json({message:'Groups saved!'});
+				return res.json({message:'Subscriptions Saved (no groups)!'});
 			}
 
 			async.parallel([
@@ -104,7 +104,7 @@ var async = module.parent.require('async'),
 					return next(err);
 				}
 
-				res.json({message: 'Groups saved!'});
+				res.json({message: 'Subscriptions Saved!'});
 			});
 		});
 	}
@@ -267,16 +267,16 @@ var async = module.parent.require('async'),
 	};
 
 	function saveGroups(groups, callback) {
-		async.each(groups, function saveGroup(group, next) {
-			if(!group.name && group.group) {
+		async.each(groups, function saveGroup(groupItem, next) {
+			if(!groupItem.name && groupItem.group) {
 				return next();
 			}
 			async.parallel([
 				function(next) {
-					db.setObject('nodebb-plugin-paypal-subscriptions:group:' + group.name, group, next);
+					db.setObject('nodebb-plugin-paypal-subscriptions:group:' + groupItem.name, groupItem, next);
 				},
 				function(next) {
-					db.setAdd('nodebb-plugin-paypal-subscriptions:groups', group.name, next);
+					db.setAdd('nodebb-plugin-paypal-subscriptions:groups', groupItem.name, next);
 				}
 			], next);
 		}, callback);

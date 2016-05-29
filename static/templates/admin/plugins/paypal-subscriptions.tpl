@@ -19,7 +19,7 @@
 </form>
 
 <div class="form groups">
-<!-- IMPORT partials/feed.tpl -->
+<!-- IMPORT partials/groups.tpl -->
 </div>
 
 <button id="addSubscription" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">

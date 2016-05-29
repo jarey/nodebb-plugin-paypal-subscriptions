@@ -50,7 +50,7 @@
 			</div>
 			<div class="col-sm-2 col-xs-12">
 				<div class="form-group">
-					<label>count</label>
+					<label>Count</label>
 					<input type="text" class="form-control subscription-trial-count" placeholder="How long does the trial period last?" value="{groups.trialcount}">
 				</div>
 			</div>

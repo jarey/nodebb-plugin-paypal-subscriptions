@@ -2,3 +2,4 @@
 
 Monetize your forum with paid subscription-based access to certain categories.
 
+[WIP] Not currently functional

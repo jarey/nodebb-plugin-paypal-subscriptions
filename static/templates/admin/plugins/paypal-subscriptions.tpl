@@ -131,10 +131,14 @@
 					endBehavior: child.find('subscription-end-behavior').val()
 				};
 				/*Must haves~before we save anything...*/
+                console.log(groupItem);
 				if (groupItem.name && groupItem.group) {
 					groupsToSave.push(groupItem);
-				}
+				} else {
+                    
+                }
 			});
+            console.log(groupsToSave);
 			$.post('{config.relative_path}/api/admin/plugins/paypal-subscriptions/save', {
 				_csrf: $('#csrf_token').val(),
 				groups: groupsToSave,
